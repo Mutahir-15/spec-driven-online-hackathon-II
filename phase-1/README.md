@@ -1,6 +1,6 @@
 # CLI Todo Application 
 
-A professional, interactive terminal-based task manager implemented in Python. This application allows users to manage their daily tasks with organizational features like priorities, tags, and search capabilities.
+A professional, interactive terminal-based task manager implemented in Python. This application allows users to manage their daily tasks with organizational features like priorities, tags, and search capabilities. Built using Gemini CLI and Speckit-plus.
 
 ## 🚀 Features
 
