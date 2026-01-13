@@ -1,55 +1,60 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report
+Version Change: [Init] -> 1.0.0
+Modified Principles: Defined P1-P6 based on project requirements.
+Added Sections: Technology Stack, Development Workflow.
+Templates:
+- plan-template.md: ✅ Compatible (Generic checks align with new principles)
+- spec-template.md: ✅ Compatible (Requirements section supports new constraints)
+- tasks-template.md: ✅ Compatible (Task phases align with spec-first flow)
+-->
+# Hackathon II – Phase II Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
+### I. Spec-First Development
 <!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+All development must follow approved specifications. Implementation without a preceding spec is prohibited. The workflow strictly follows: Spec → Plan → Tasks → Implement. Traceability must be maintained across all stages to ensure requirements are met and verifiable.
 
-### [PRINCIPLE_2_NAME]
+### II. Clear Separation of Concerns
 <!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+The architecture MUST maintain a strict separation between Frontend and Backend responsibilities. The Frontend (Next.js) is responsible for UI/UX and interaction, while the Backend (FastAPI) handles business logic, data persistence, and security. No business logic is permitted in the Frontend.
 
-### [PRINCIPLE_3_NAME]
+### III. API-Driven Architecture
 <!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+Communication between Frontend and Backend MUST occur exclusively via RESTful HTTP APIs. The Backend exposes endpoints; the Frontend consumes them using standard HTTP clients (fetch). Direct database access from the Frontend is strictly prohibited.
 
-### [PRINCIPLE_4_NAME]
+### IV. Quality & Standards
 <!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+API contracts (request/response models) must be explicitly defined. Input validation using Pydantic (Backend) is mandatory. HTTP status codes must be semantically correct. Secrets and database connection strings MUST be managed via environment variables and never hardcoded.
 
-### [PRINCIPLE_5_NAME]
+### V. Database Integrity
 <!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+Persistence is handled by Neon DB (PostgreSQL). Database schema MUST be managed via code (SQLModel) and migrations, ensuring reproducibility. Manual database edits are prohibited to maintain the source of truth in the codebase.
 
-### [PRINCIPLE_6_NAME]
+### VI. Constraints & Scope
+<!-- Example: VI. Versioning & Breaking Changes -->
+No external backend frameworks beyond the FastAPI ecosystem are allowed. Monolithic architecture patterns are forbidden. The scope is limited to Core CRUD functionality and its necessary UI, ensuring a focused and deliverable Full-Stack prototype.
 
-
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
+## Technology Stack
 <!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+**Frontend**: Next.js (App Router), TypeScript. Rendering: Server Components preferred, Client Components where necessary.
+**Backend**: FastAPI, Python 3.x, SQLModel. API Style: REST (JSON).
+**Database**: Neon DB (PostgreSQL) accessed via SQLModel.
 
-## [SECTION_3_NAME]
+## Development Workflow
 <!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Development proceeds in two distinct services (Frontend/Backend). Changes should be atomic and testable.
+1. Define the Spec (Requirements & User Stories).
+2. Plan the Architecture (Data Models & API Contracts).
+3. Create Tasks (Separated by User Story).
+4. Implement (Backend first, then Frontend integration recommended).
+5. Verify (Local execution and flow validation).
 
 ## Governance
 <!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This Constitution supersedes all prior practices. Amendments must be documented via the governance process and require a version bump. All Pull Requests and Design Reviews must explicitly verify compliance with these principles. Use `.specify/memory/constitution.md` as the source of truth.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-07 | **Last Amended**: 2026-01-07
