@@ -19,12 +19,12 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure (backend/src, frontend/src) per implementation plan
-- [ ] T002 Initialize Backend: Setup virtual environment, install FastAPI, Uvicorn, SQLModel, Pydantic
-- [ ] T003 [P] Initialize Frontend: Create Next.js App Router project with Tailwind CSS
-- [ ] T004 Configure environment variables (.env) for DB connection and API URL
-- [ ] T005 [P] Setup backend linting (Ruff) and frontend linting (ESLint/Prettier)
-- [ ] T006 [P] Configure shared types or API client generation setup
+- [x] T001 Create project structure (backend/src, frontend/src) per implementation plan
+- [x] T002 Initialize Backend: Setup virtual environment, install FastAPI, Uvicorn, SQLModel, Pydantic
+- [x] T003 [P] Initialize Frontend: Create Next.js App Router project with Tailwind CSS
+- [x] T004 Configure environment variables (.env) for DB connection and API URL
+- [x] T005 [P] Setup backend linting (Ruff) and frontend linting (ESLint/Prettier)
+- [x] T006 [P] Configure shared types or API client generation setup
 
 ## Phase 2: Foundational (Blocking Prerequisites)
 
@@ -32,13 +32,13 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T007 Setup Database: Configure Neon DB connection in `backend/src/core/db.py`
-- [ ] T008 Implement Base Model: Create `Item` SQLModel in `backend/src/models/item.py`
-- [ ] T009 Setup Migrations: Initialize Alembic and generate initial migration for Item table
-- [ ] T010 Setup API Router: Create `backend/src/api/items.py` and register in `main.py`
-- [ ] T011 [P] Frontend Layout: Create global layout with navigation in `frontend/src/app/layout.tsx`
-- [ ] T012 [P] UI Components: Create atomic components (Button, Input, Card) in `frontend/src/components/ui/`
-- [ ] T013 [P] API Client: Create typed fetch wrapper in `frontend/src/lib/api.ts`
+- [x] T007 Setup Database: Configure Neon DB connection in `backend/src/core/db.py`
+- [x] T008 Implement Base Model: Create `Item` SQLModel in `backend/src/models/item.py`
+- [x] T009 Setup Migrations: Initialize Alembic and generate initial migration for Item table
+- [x] T010 Setup API Router: Create `backend/src/api/items.py` and register in `main.py`
+- [x] T011 [P] Frontend Layout: Create global layout with navigation in `frontend/src/app/layout.tsx`
+- [x] T012 [P] UI Components: Create atomic components (Button, Input, Card) in `frontend/src/components/ui/`
+- [x] T013 [P] API Client: Create typed fetch wrapper in `frontend/src/lib/api.ts`
 
 **Checkpoint**: Foundation ready - Database connected, models defined, UI shell ready.
 
@@ -50,11 +50,11 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T014 [US1] Backend: Implement `POST /items/` endpoint in `backend/src/api/items.py`
-- [ ] T015 [US1] Backend: Add validation for empty title in `ItemCreate` schema
-- [ ] T016 [US1] Frontend: Create `ItemForm` component in `frontend/src/components/features/item-form.tsx`
-- [ ] T017 [US1] Frontend: Create Create Item Page (`frontend/src/app/items/new/page.tsx`)
-- [ ] T018 [US1] Integration: Connect Form to API and handle success/error states (toast)
+- [x] T014 [US1] Backend: Implement `POST /items/` endpoint in `backend/src/api/items.py`
+- [x] T015 [US1] Backend: Add validation for empty title in `ItemCreate` schema
+- [x] T016 [US1] Frontend: Create `ItemForm` component in `frontend/src/components/features/item-form.tsx`
+- [x] T017 [US1] Frontend: Create Create Item Page (`frontend/src/app/items/new/page.tsx`)
+- [x] T018 [US1] Integration: Connect Form to API and handle success/error states (toast)
 
 **Checkpoint**: User Story 1 functional and testable.
 
@@ -66,12 +66,12 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Backend: Implement `GET /items/` endpoint with pagination in `backend/src/api/items.py`
-- [ ] T020 [P] [US2] Backend: Implement `GET /items/{id}` endpoint in `backend/src/api/items.py`
-- [ ] T021 [US2] Frontend: Create `ItemCard` component in `frontend/src/components/features/item-card.tsx`
-- [ ] T022 [US2] Frontend: Implement Item List Page (`frontend/src/app/page.tsx` or `/items/page.tsx`)
-- [ ] T023 [US2] Frontend: Implement Item Detail Page (`frontend/src/app/items/[id]/page.tsx`)
-- [ ] T024 [P] [US2] Frontend: Implement 404 Error State for missing items
+- [x] T019 [P] [US2] Backend: Implement `GET /items/` endpoint with pagination in `backend/src/api/items.py`
+- [x] T020 [P] [US2] Backend: Implement `GET /items/{id}` endpoint in `backend/src/api/items.py`
+- [x] T021 [US2] Frontend: Create `ItemCard` component in `frontend/src/components/features/item-card.tsx`
+- [x] T022 [US2] Frontend: Implement Item List Page (`frontend/src/app/page.tsx` or `/items/page.tsx`)
+- [x] T023 [US2] Frontend: Implement Item Detail Page (`frontend/src/app/items/[id]/page.tsx`)
+- [x] T024 [P] [US2] Frontend: Implement 404 Error State for missing items
 
 **Checkpoint**: User Stories 1 & 2 complete (Create & Read).
 
@@ -83,10 +83,10 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T025 [US3] Backend: Implement `PATCH /items/{id}` endpoint in `backend/src/api/items.py`
-- [ ] T026 [US3] Frontend: Add "Edit" mode to `ItemForm` component
-- [ ] T027 [US3] Frontend: Create Edit Item Page (`frontend/src/app/items/[id]/edit/page.tsx`)
-- [ ] T028 [US3] Integration: Connect Edit Form to API and handle optimistic updates (optional)
+- [x] T025 [US3] Backend: Implement `PATCH /items/{id}` endpoint in `backend/src/api/items.py`
+- [x] T026 [US3] Frontend: Add "Edit" mode to `ItemForm` component
+- [x] T027 [US3] Frontend: Create Edit Item Page (`frontend/src/app/items/[id]/edit/page.tsx`)
+- [x] T028 [US3] Integration: Connect Edit Form to API and handle optimistic updates (optional)
 
 **Checkpoint**: User Stories 1, 2, & 3 complete (Create, Read, Update).
 
@@ -98,9 +98,9 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 ### Implementation for User Story 4
 
-- [ ] T029 [US4] Backend: Implement `DELETE /items/{id}` endpoint in `backend/src/api/items.py`
-- [ ] T030 [US4] Frontend: Add Delete Button with Confirmation Dialog to `ItemCard` / Detail View
-- [ ] T031 [US4] Integration: Wire up delete action and refresh list/redirect
+- [x] T029 [US4] Backend: Implement `DELETE /items/{id}` endpoint in `backend/src/api/items.py`
+- [x] T030 [US4] Frontend: Add Delete Button with Confirmation Dialog to `ItemCard` / Detail View
+- [x] T031 [US4] Integration: Wire up delete action and refresh list/redirect
 
 **Checkpoint**: Full CRUD functionality complete.
 
@@ -108,11 +108,11 @@ description: "Task list for Phase 2 Item CRUD implementation"
 
 **Purpose**: Improvements, accessibility, and final validation.
 
-- [ ] T032 [P] Accessibility: Audit ARIA labels and keyboard navigation
-- [ ] T033 [P] Styling: Refine hover states, transitions, and responsive layout
-- [ ] T034 [P] Error Handling: Ensure graceful UI for network errors/backend downtime
-- [ ] T035 Documentation: Update README.md with setup and usage instructions
-- [ ] T036 Validation: Run through all Acceptance Scenarios in spec.md
+- [x] T032 [P] Accessibility: Audit ARIA labels and keyboard navigation
+- [x] T033 [P] Styling: Refine hover states, transitions, and responsive layout
+- [x] T034 [P] Error Handling: Ensure graceful UI for network errors/backend downtime
+- [x] T035 Documentation: Update README.md with setup and usage instructions
+- [x] T036 Validation: Run through all Acceptance Scenarios in spec.md
 
 ## Dependencies & Execution Order
 
