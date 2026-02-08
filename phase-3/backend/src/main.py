@@ -1,9 +1,13 @@
 from contextlib import asynccontextmanager
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .api import items, tags
+from .api import items, tags, chat
 from .core.db import create_db_and_tables
 
 
@@ -28,6 +32,7 @@ app.add_middleware(
 
 app.include_router(items.router)
 app.include_router(tags.router)
+app.include_router(chat.router)
 
 @app.get("/")
 def read_root():
