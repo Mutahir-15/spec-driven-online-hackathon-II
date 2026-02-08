@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Task Management Upgrade API
+  version: 1.0.0
+paths:
+  /items/:
+    get:
+      summary: List tasks with filters and search
+      parameters:
+        - name: q
+          in: query
+          schema: {type: string}
+          description: Search keyword
+        - name: completed
+          in: query
+          schema: {type: boolean}
+        - name: priority
+          in: query
+          schema: {type: string, enum: [High, Medium, Low]}
+        - name: sort_by
+          in: query
+          schema: {type: string, enum: [due_date, priority, title]}
+      responses:
+        '200':
+          description: List of items
+    post:
+      summary: Create task (now with priority/tags)
+      responses:
+        '201':
+          description: Created
+  /items/{id}:
+    patch:
+      summary: Update task details or toggle completion
+      responses:
+        '200':
+          description: Updated
+  /tags/:
+    get:
+      summary: Get all available tags
+    post:
+      summary: Create a new tag

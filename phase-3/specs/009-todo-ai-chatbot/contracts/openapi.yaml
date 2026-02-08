@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: Todo AI Chatbot API
+  version: 1.0.0
+  description: API for interacting with the AI-powered Todo assistant.
+
+paths:
+  /api/chat:
+    post:
+      summary: Send a message to the AI agent
+      operationId: chatWithAgent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                conversation_id:
+                  type: integer
+                  description: Optional ID of an existing conversation.
+                  nullable: true
+                message:
+                  type: string
+                  description: The user's natural language message.
+              required:
+                - message
+      responses:
+        '200':
+          description: AI response and conversation context
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: integer
+                    description: The ID of the conversation.
+                  response:
+                    type: string
+                    description: The AI agent's natural language response.
+        '400':
+          description: Invalid request
+        '500':
+          description: Internal server error

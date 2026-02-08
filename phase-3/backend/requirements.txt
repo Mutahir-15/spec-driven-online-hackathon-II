@@ -6,3 +6,6 @@ ruff
 python-dotenv
 psycopg2-binary
 alembic
+openai
+openai-agents
+mcp
